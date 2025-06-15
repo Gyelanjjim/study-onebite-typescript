@@ -28,3 +28,5 @@ let unde1: undefined = undefined;
 let numA: 10 = 10;
 
 let strA: "hello" = "hello";
+
+let num11: number = null
