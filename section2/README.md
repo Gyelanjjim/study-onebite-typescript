@@ -26,14 +26,14 @@ tsconfig.json 변경 후 ts 서버 재실행하려면:
 
 ## 1. 원시 타입, 리터럴 타입
 tsconfig.json
-```
+```js
 {
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
     "outDir": "dist",
-    "strict": true,
-    "strictNullChecks": false, // null 값을 엄격하게 검사하지 않겠다
+    "strict": true, // 상위 옵션
+    "strictNullChecks": false, // null 값을 엄격하게 검사하지 않겠다, 하위 옵션
     "moduleDetection": "force",
     "moduleResolution": "node",
     "skipLibCheck": true

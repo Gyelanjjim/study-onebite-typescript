@@ -25,7 +25,8 @@ let unde1: undefined = undefined;
 
 // 리터럴 타입
 // 리터럴 -> 값
-let numA: 10 = 10;
+let numA: 10 = 10; // 10 외에 다른 값은 할당할 수 없다
+
 
 let strA: "hello" = "hello";
 
