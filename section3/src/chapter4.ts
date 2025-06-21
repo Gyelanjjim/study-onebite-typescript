@@ -8,32 +8,45 @@
  * 1. 합집합 - Union 타입
  */
 
-let a: string | number | boolean;
+let a: string | number | boolean | string[];
 a = 1;
-a = "hello";
-
+a = 'hello';
+a = ['aaaa'];
 a = true;
 
-let arr: (number | string | boolean)[] = [1, "hello", true];
+let arr: (number | string | boolean)[] = [1, 'hello', true, '1'];
 
-type Union1 = Dog | Person;
+type School = {
+    name: string;
+    location: string;
+};
 
+type Class = {
+    id: number;
+    name: string;
+};
+
+type Union1 = Class | School; // 타입 별칭에도 유니언타입을 선언할 수 있다
+
+// 가능! ---------------------------
 let union1: Union1 = {
-  name: "",
-  color: "",
+    name: '',
+    location: '',
 };
 
 let union2: Union1 = {
-  name: "",
-  language: "",
+    id: 0,
+    name: '',
 };
 
 let union3: Union1 = {
-  name: "",
-  color: "",
-  language: "",
+    id: 0,
+    name: '',
+    location: '',
 };
+// -------------------------------
 
+// 에러!
 // let union4: Union1 = {
 //   name: "",
 // };
@@ -42,22 +55,24 @@ let union3: Union1 = {
  * 2. 교집합 타입 - Intersection 타입
  */
 
-let variable: number & string;
+let variable: number & string; // => never 타입이 된다!
 
 type Dog = {
-  name: string;
-  color: string;
+    name: string;
+    color: string;
 };
 
 type Person = {
-  name: string;
-  language: string;
+    name: string;
+    dogName: string;
+    language: string;
 };
 
 type Intersection = Dog & Person;
 
 let intersection1: Intersection = {
-  name: "",
-  color: "",
-  language: "",
+    name: '',
+    dogName: '',
+    color: '',
+    language: '',
 };
